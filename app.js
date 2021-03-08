@@ -16,7 +16,7 @@ var cookieParser = require('cookie-parser');
 var tokens = [];
 var client_id = '1b015d21997143e28e0724a9646dedd3'; // Your client id
 var client_secret = '732b088b97ba44ecb86a96a290f1f8e4'; // Your secret
-var redirect_uri = 'http://localhost:8888/callback'; // Your redirect uri
+var redirect_uri = 'https://spotify-server-seven.vercel.app/callback'; // Your redirect uri
 
 /**
  * Generates a random string containing numbers and letters
@@ -115,7 +115,7 @@ app.get('/callback', function(req, res) {
         });
 
         // we can also pass the token to the browser to make requests from there
-        res.redirect('http://localhost:3000/#' +
+        res.redirect('https://my-spotify-data-center.vercel.app/#' +
           querystring.stringify({
             access_token: access_token,
             refresh_token: refresh_token
